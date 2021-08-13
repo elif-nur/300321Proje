@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Entities.Concrete.Date>
+@{
+    ViewBag.Title = "Important_Date";
+}
+
+
+<div class="my-container">
+
+    <div id="turkish" style="margin-top:20px; text-align:justify">
+        @foreach (var item in Model)
+        {
+            <h5>@item.TitleTR</h5>
+            <hr />
+            <p>@item.DescriptionTR</p>
+
+        }
+
+    </div>
+    <div id="arabic" dir="rtl" lang="ar" style="        margin-top: 20px;
+        text-align: right;">
+        @foreach (var item in Model)
+        {
+            <h5>@item.TitleAR</h5>
+            <hr />
+            <p>@item.DescriptionAR</p>
+
+        }
+
+
+    </div>
+    <div id="english" style="margin-top:20px; text-align:justify">
+
+        @foreach (var item in Model)
+        {
+            <h5>@item.TitleEN</h5>
+            <hr />
+            <p>@item.DescriptionEN</p>
+       
+         }
+         
+        </div>
+
+
+</div>
+<br />
+<br />
+<br />

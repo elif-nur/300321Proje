@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Entities.Concrete.Program>
+@{
+    ViewBag.Title = "Program";
+}
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<style>
+
+    .accordion {
+        border:1px solid gray;
+        color: black;
+        cursor: pointer;
+        padding: 7px;
+        width: 100%;
+      
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+    }
+
+        .active, .accordion:hover {
+            background-color: gray;
+            box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+        }
+
+    .panel {
+        padding: 0 18px;
+        display: none;
+        border:1px solid gray;
+        overflow: hidden;
+    }
+</style>
+
+<div class="my-container">
+
+    <div id="turkish" style="margin-top:20px; text-align:justify">
+        <h5>BİLİMSEL PROGRAM</h5>
+        <div class="bBorder"></div><br />
+        @foreach (var item in Model)
+        {
+            <button class="accordion">@item.TitleTR<i class="bi bi-plus-circle" style="float:right"></i></button>
+            <div class="panel">
+                <br />
+                <p>@item.DescriptionTR</p>
+            </div>
+        }
+
+
+    </div>
+    <div id="arabic" dir="rtl" lang="ar" style="        margin-top: 20px;
+        text-align: right;">
+
+        <h5>المؤتمر العالمي لألعاب التضامن الاسلامي</h5>
+        <div class="bBorder"></div><br />
+        @foreach (var item in Model)
+        {
+            <button class="accordion">@item.TitleAR<i class="bi bi-plus-circle" style="float:right"></i></button>
+            <div class="panel">
+                <br />
+                <p>@item.DescriptionAR</p>
+            </div>
+        }
+    </div>
+    <div id="english" style="margin-top:20px; text-align:justify">
+
+        <h5>SCIENTIFIC PROGRAM</h5>
+        <div class="bBorder"></div><br />
+        @foreach (var item in Model)
+        {
+            <button class="accordion">@item.TitleEN<i class="bi bi-plus-circle" style="float:right"></i></button>
+            <div class="panel">
+                <br />
+                <p>@item.DescriptionEN</p>
+            </div>
+        }
+
+
+    </div>
+
+
+</div>
+<br />
+<br />
+<br />
+<br />
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>

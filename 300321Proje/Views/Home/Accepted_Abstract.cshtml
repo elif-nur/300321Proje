@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Entities.Concrete.Accepted>
+@{
+    ViewBag.Title = "Accepted_Abstract";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="my-container">
+
+    <div id="turkish" style="margin-top:20px; text-align:justify">
+        <h5>KABUL EDİLEN ÖZETLER</h5>
+        <div class="bBorder"></div><br />
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>AD</th>
+                    <th>SOYAD</th>
+                </tr>
+            </thead>
+            <tbody>
+              @foreach (var item in Model)
+              {
+                  <tr>
+                      <td>@item.NameTR</td>
+                      <td>@item.SurnameTR</td>
+                   
+                  </tr>
+              }
+            </tbody>
+        </table>
+    </div>
+    <div id="arabic" dir="rtl" lang="ar" style="        margin-top: 20px;
+        text-align: right;">
+        <h5>الملخصات المقبولة</h5>
+        <div class="bBorder"></div><br />
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>اسم</th>
+                    <th>الكنية</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.NameAR</td>
+                        <td>@item.SurnameAR</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div id="english" style="margin-top:20px; text-align:justify">
+        <h5>ACCEPTED SUMMARIES</h5>
+        <div class="bBorder"></div><br />
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>SURNAME</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.NameEN</td>
+                        <td>@item.SurnameEN</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>
+<br />
+<br />
+<br />
+

@@ -1,0 +1,20 @@
+﻿@model Entities.Concrete.Slider
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/ManagerPanel/_ManagerLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Create", "Slider", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="ImagePath" />
+    @Html.ValidationMessageFor(x => x.ImagePath)
+    <br />
+
+    <input type="submit" value="Kaydet" class="btn btn-success" />
+}
+<br />
+<div>
+    @Html.ActionLink("Geri", "Index")
+</div>
+

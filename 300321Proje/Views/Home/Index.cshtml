@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="my-container">
+
+    <div id="turkish" style="margin-top:20px; text-align:justify">
+        @foreach (var item in ViewBag.anasayfa)
+        {
+            <h3>@item.TitleTR</h3>
+            <div class="bBorder"></div><br />
+            <p>@item.DescriptionTR</p>
+
+        }
+
+
+    </div>
+    <div id="arabic" dir="rtl" lang="ar" style="        margin-top: 20px;
+        text-align: right;">
+
+        @foreach (var item in ViewBag.anasayfa)
+        {
+            <h3>@item.TitleAR</h3>
+            <div class="bBorder"></div><br />
+            <p>@item.DescriptionAR</p>
+
+        }
+    </div>
+    <div id="english" style="margin-top:20px; text-align:justify">
+        @foreach (var item in ViewBag.anasayfa)
+        {
+            <h3>@item.TitleEN</h3>
+            <div class="bBorder"></div><br />
+            <p>@item.DescriptionEN</p>
+
+        }
+    </div>
+
+
+</div>
+<br />
+
+
+
+
+
+<br />
+<br />
+<br />
+<section id="portfolio" class="portfolio">
+    <div class="container">
+
+
+
+        <div class="row portfolio-container">
+            @foreach (var item in ViewBag.resim)
+            {
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap">
+                        <img src="@item.ImagePath" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+
+                            <div class="portfolio-links">
+                                <a href="@item.ImagePath" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+
+    </div>
+</section><!-- End Portfolio Section -->
+@*</div>*@
+<br />
+<br />

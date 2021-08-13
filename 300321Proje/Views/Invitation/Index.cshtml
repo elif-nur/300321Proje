@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Entities.Concrete.Invitation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/ManagerPanel/_ManagerLayout.cshtml";
+}
+
+<br />
+
+<p>
+    <a href="/Invitation/Create" class="btn btn-success">Ekle</a>
+</p>
+
+<table class="table table-hover" id="tablo">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>BAŞLIK (TR) </th>
+            <th>BAŞLIK (EN) </th>
+            <th>BAŞLIK (AR) </th>
+            <th>İÇERİK (TR) </th>
+            <th>İÇERİK (EN) </th>
+            <th>İÇERİK (AR) </th>
+            <th>GÜNCELLE</th>
+            <th>SİL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.TitleTR</td>
+                <td>@item.TitleEN</td>
+                <td>@item.TitleAR</td>
+                <td>@item.DescriptionTR</td>
+                <td>@item.DescriptionEN</td>
+                <td>@item.DescriptionAR</td>
+                <td><a href="/Invitation/Update/@item.Id" class="btn btn-primary">Güncelle</a></td>
+                <td><a href="/Invitation/Delete/@item.Id" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+

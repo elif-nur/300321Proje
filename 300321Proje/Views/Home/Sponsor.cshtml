@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Entities.Concrete.Sponsor>
+<div class="clients-slider swiper-container">
+    <div class="swiper-wrapper align-items-center">
+        @foreach (var item in Model)
+        {
+            <div class="swiper-slide"><a href="@item.Link"><img src="@item.ImagePath" class="img-fluid" alt=""></a></div>
+        }
+      
+    </div>
+    <div class="swiper-pagination"></div>
+</div>

@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Subject_Headings";
+}
+
+
+<div class="my-container">
+
+    <div id="turkish" style="margin-top:20px; text-align:justify">
+        <div class="row">
+            <div class="col-lg-4">
+                @foreach (var item in ViewBag.culture)
+                {
+                    <h5>@item.TitleTR</h5>
+                    <p>@item.DescriptionTR</p>
+                }
+
+
+            </div>
+
+            <div class="col-lg-4">
+                @foreach (var item in ViewBag.sport)
+                {
+                    <h5>@item.TitleTR</h5>
+                    <p>@item.DescriptionTR</p>
+                }
+
+            </div>
+            <div class="col-lg-4">
+                @foreach (var item in ViewBag.solidarity)
+                {
+                    <h5>@item.TitleTR</h5>
+                    <p>@item.DescriptionTR</p>
+                }
+
+
+            </div>
+
+        </div>
+      
+
+    </div>
+    <div id="arabic" dir="rtl" lang="ar" style="        margin-top: 20px;
+        text-align: right;">
+        <div class="row">
+            <div class="col-lg-4">
+                @foreach (var item in ViewBag.culture)
+                {
+                    <h5>@item.TitleAR</h5>
+                    <p>@item.DescriptionAR</p>
+                }
+
+
+            </div>
+
+            <div class="col-lg-4">
+                @foreach (var item in ViewBag.sport)
+                {
+                    <h5>@item.TitleAR</h5>
+                    <p>@item.DescriptionAR</p>
+                }
+
+            </div>
+            <div class="col-lg-4">
+                @foreach (var item in ViewBag.solidarity)
+                {
+                    <h5>@item.TitleAR</h5>
+                    <p>@item.DescriptionAR</p>
+                }
+
+
+            </div>
+
+        </div>
+    </div>
+<div id="english" style="margin-top:20px; text-align:justify">
+
+    <div class="row">
+        <div class="col-lg-4">
+            @foreach (var item in ViewBag.culture)
+            {
+                <h5>@item.TitleEN</h5>
+                <p>@item.DescriptionEN</p>
+            }
+
+
+        </div>
+
+        <div class="col-lg-4">
+            @foreach (var item in ViewBag.sport)
+            {
+                <h5>@item.TitleEN</h5>
+                <p>@item.DescriptionEN</p>
+            }
+
+        </div>
+        <div class="col-lg-4">
+            @foreach (var item in ViewBag.solidarity)
+            {
+                <h5>@item.TitleEN</h5>
+                <p>@item.DescriptionEN</p>
+            }
+
+
+        </div>
+
+    </div>
+</div>
+
+
+</div>
+<br />
+<br />
+
+

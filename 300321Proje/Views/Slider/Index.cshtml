@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Entities.Concrete.Slider>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/ManagerPanel/_ManagerLayout.cshtml";
+}
+
+<br />
+<p>
+    <a href="/Slider/Create" class="btn btn-success">Ekle</a>
+</p>
+<table class="table" id="tablo">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>RESİM</th>
+            <th>SİL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td><img src=@item.ImagePath style="width:50%" /></td>
+
+                <td><a href="/Slider/Delete/@item.Id" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>

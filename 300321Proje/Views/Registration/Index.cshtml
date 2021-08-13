@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Entities.Concrete.Registration>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/ManagerPanel/_ManagerLayout.cshtml";
+}
+
+<br />
+
+<table class="table" id="tablo">
+    <thead>
+        <tr>
+         
+            <th>AD</th>
+            <th>SOYAD</th>
+            <th>EMAIL</th>
+            <th>AFFILIATION</th>
+            <th>ÜLKE</th>
+            <th>BAŞLIK</th>
+            <th>ÖZET</th>
+            <th>KATILIMCI</th>
+            @*<th>FILE</th>*@
+            <th>GÜNCELLE</th>
+            <th>SİL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+          
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Email</td>
+            <td>@item.Affiliation</td>
+            <td>@item.Country</td>
+            <td>@item.Title</td>
+            <td>@item.Abstract</td>
+            <td>@item.Selection</td>
+            @*<td>@item.Filee</td>
+            <td><a href="@Url.Action("Download", "Registration", new { file = item.Filee })">İndir</a></td>*@
+            <td><a href="/Registration/Update/@item.Id" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/Registration/Delete/@item.Id" class="btn btn-danger">Sil</a></td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+

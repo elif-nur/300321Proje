@@ -1,0 +1,178 @@
+﻿
+@{
+    Layout = null;
+}
+
+@*@model Entities.Concrete.Registration*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/Images/icons/favicon.ico" />
+
+    <!--===============================================================================================-->
+
+    <link href="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+    <!--===============================================================================================-->
+
+    <link href="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/css/animate.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+
+    <link href="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/css/hamburgers.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/css/animsition.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/css/select2.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/css/daterangepicker.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/css/main.css" rel="stylesheet" />
+    <link href="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/css/util.css" rel="stylesheet" />
+    <!--===============================================================================================---->
+</head>
+<body>
+
+
+    <div class="container-contact100">
+
+        <div class="wrap-contact100">
+
+            <form class="contact100-form validate-form" action="Registration" method="post">
+                <span class="contact100-form-title">
+                    Registration Form
+                </span>
+                @if (ViewBag.mesaj != null)
+                {
+                    <i class="fas fa-exclamation" style="color:red">@ViewBag.mesaj</i>
+                }
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="FirstName" placeholder="First Name" required>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="LastName" placeholder="Last Name" required>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="email" name="Email" placeholder="E-mail" required>
+                    @*@Html.ValidationMessageFor(x => x.Email)*@
+
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="Affiliation" placeholder="Affiliation" required>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="Country" placeholder="Country" required>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 ">
+                    <input class="input100" type="text" name="Title" placeholder="Title">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" style="color:#8f8fa1">
+                    <input type="radio" id="katilimcidi" onclick="ShowOrHide(1)" name="Selection" value="dinleyici" class="input10" required>
+                    <label for="vehicle1">Participant Listener</label>
+                    <span class="focus-input100"></span>
+                    <input type="radio" id="vehicle2" name="Selection" onclick="ShowOrHide(2)" value="konusmacı" class="input10">
+                    <label for="vehicle2"> Speaker</label>
+                    <span class="focus-input100"></span>
+                    <input type="radio" id="vehicle3" name="Selection" onclick="ShowOrHide(2)" value="katılımcı konusmacı" class="input10">
+                    <label for="vehicle2">Invited Speaker</label>
+                    <span class="focus-input100"></span>
+                </div>
+                <br />
+                @*<i class="fas fa-exclamation">Do not exceed 1000 characters</i>*@
+                <div class="wrap-input100" id="abstract">
+
+                    <textarea class="input100" name="Abstract" placeholder="Abstract"></textarea>
+
+                    <span style="color:red">
+                        @*@Html.ValidationMessageFor(x => x.Abstract)*@
+                    </span>
+                    <span class="focus-input100"></span>
+
+                </div>
+
+
+                @*@using (Html.BeginForm("Yukle", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="Filee" value="file" required/>
+            <button type="submit">Kaydet</button>
+        }*@
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn" style="background-color:#e96b56" type="submit">
+                        <span>
+                            <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                            Registration
+                        </span>
+                    </button>
+                </div>
+            </form>
+
+         
+
+        </div>
+    </div>
+
+ 
+
+    <div id="dropDownSelect1"></div>
+
+    <!--===============================================================================================-->
+
+    <script src="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/js/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/js/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/js/moment.min.js"></script>
+    <script src="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/js/daterangepicker.js"></script>
+    <!--==============================================================================================-->
+    <script src="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/js/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/startbootstrap-shop-item-gh-pages/vendor/bootstrap/js/main.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+
+    <script>
+
+        function ShowOrHide(deger) {
+         
+            if (deger === 1) {
+                var hide = document.getElementById('abstract');
+                hide.style.display = "none";
+            }
+            if (deger === 2) {
+                var show = document.getElementById('abstract');
+                show.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

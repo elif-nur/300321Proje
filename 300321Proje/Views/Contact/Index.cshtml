@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Entities.Concrete.Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/ManagerPanel/_ManagerLayout.cshtml";
+}
+
+<br />
+<p>
+    <a href="/Contact/Create" class="btn btn-success">Ekle</a>
+</p>
+<table class="table table-hover" id="tablo">
+    <thead>
+        <tr>
+            <th>ID</th>
+      
+            <th>ADRES</th>
+            <th>MAİL</th>
+            <th>TELEFON</th>
+            <th>GÜNCELLE</th>
+            <th>SİL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+        
+            <td>@item.Adress</td>
+            <td>@item.Email</td>
+            <td>@item.Number</td>
+            <td><a href="/Contact/Update/@item.Id" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/Contact/Delete/@item.Id" class="btn btn-danger">Sil</a></td>
+        </tr>
+        }
+    </tbody>
+
+</table>

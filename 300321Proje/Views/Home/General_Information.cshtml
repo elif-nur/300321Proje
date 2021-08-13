@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Entities.Concrete.General>
+@{
+    ViewBag.Title = "General_Information";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="my-container">
+
+    <div id="turkish" style="margin-top:20px; text-align:justify">
+        @foreach (var item in Model)
+        {
+            <h6>@item.TitleTR</h6>
+            <div class="bBorder"></div><br />
+            <p>@item.DescriptionTR</p>
+
+        }
+
+
+    </div>
+    <div id="arabic" dir="rtl" lang="ar" style="        margin-top: 20px;
+        text-align: right;">
+
+        @foreach (var item in Model)
+        {
+            <h6>@item.TitleAR</h6>
+            <div class="bBorder"></div><br />
+            <p>@item.DescriptionAR</p>
+
+        }
+    </div>
+    <div id="english" style="margin-top:20px; text-align:justify">
+        @foreach (var item in Model)
+        {
+            <h6>@item.TitleEN</h6>
+            <div class="bBorder"></div><br />
+            <p>@item.DescriptionEN</p>
+
+        }
+    </div>
+
+
+</div>
+<br />
+<br />
+

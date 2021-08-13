@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/ManagerPanel/_ManagerLayout.cshtml";
+}
+
+<br />
+
+<table class="table" id="tablo">
+    <thead>
+        <tr>
+
+
+            <th>TAM GÖNDERİLEN ÖZET</th>
+            <th>İNDİR</th>
+            <th>SİL</th>
+            @*<th>KABUL EDİLEN ÖZETLER</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+
+                <td>@item.Filee</td>
+                <td>
+                    <a href="@Url.Action("Download", "FullSubmit", new { file = item.Filee })" class="btn btn-success">İndir</a>
+                </td>
+
+                <td><a href="/FullSubmit/Delete/@item.Id" class="btn btn-danger">Sil</a></td>
+
+                @*<td>@item.Selection</td>
+                    <td>
+                        <form action="Index" method="post">
+
+                            <input type="radio" name="Selection" value="Kabuledildi">
+                            <label>Kabul edilen özet </label>
+                            <input type="radio" name="Selection" value="Kabuledilmedi">
+                            <label>Kabul edilmeyen özet</label>
+                            <input type="submit" class="btn btn-warning" value="Kaydet" />
+
+                        </form>
+                    </td>*@
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+

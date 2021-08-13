@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Entities.Concrete.Account>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/ManagerPanel/_ManagerLayout.cshtml";
+}
+
+
+<table class="table table-hover" id="tablo">
+    <thead>
+        <tr>
+          
+            <th>FACEBOOK</th>
+            <th>INSTAGRAM</th>
+            <th>TWITTER</th>
+            <th>YOUTUBE</th>
+            <th>GÜNCELLE</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>@item.Facebook</td>
+               <td>@item.Instagram</td>
+               <td>@item.Twitter</td>
+               <td>@item.Youtube</td>
+                <td><a href="/Account/Update/@item.Id" class="btn btn-primary">Güncelle</a></td>
+             
+            </tr>
+        }
+    </tbody>
+
+</table>
+

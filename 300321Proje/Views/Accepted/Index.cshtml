@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Entities.Concrete.Accepted>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/ManagerPanel/_ManagerLayout.cshtml";
+}
+
+<p>
+    <a href="/Accepted/Create" class="btn btn-success">Ekle</a>
+</p>
+
+<table class="table table-hover" id="tablo">
+    <thead>
+        <tr>
+         
+            <th>AD (TR) </th>
+            <th>SOYAD (TR) </th>
+            <th>AD (EN) </th>
+            <th>SOYAD (EN) </th>
+            <th>AD (AR) </th>
+            <th>SOYAD (AR) </th>
+            <th>GÜNCELLE</th>
+            <th>SİL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+             
+                <td>@item.NameTR</td>
+                <td>@item.SurnameTR</td>
+                <td>@item.NameEN</td>
+                <td>@item.SurnameEN</td>
+                <td>@item.NameAR</td>
+                <td>@item.SurnameAR</td>
+                <td><a href="/Accepted/Update/@item.Id" class="btn btn-primary">Güncelle</a></td>
+                <td><a href="/Accepted/Delete/@item.Id" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
